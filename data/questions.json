@@ -1,0 +1,201 @@
+{
+  "Python": [
+
+    {
+      "question": "What is Python?",
+      "options": [
+        "Programming Language",
+        "Database",
+        "Operating System",
+        "Browser"
+      ],
+      "answer": "Programming Language",
+      "topic": "Introduction"
+    },
+
+    {
+      "question": "Which keyword is used for function?",
+      "options": [
+        "define",
+        "def",
+        "function",
+        "fun"
+      ],
+      "answer": "def",
+      "topic": "Functions"
+    },
+
+    {
+      "question": "Which loop is used in Python?",
+      "options": [
+        "for",
+        "repeat",
+        "loop",
+        "iterate"
+      ],
+      "answer": "for",
+      "topic": "Loops"
+    },
+
+    {
+      "question": "Which symbol is used for comments in Python?",
+      "options": [
+        "#",
+        "//",
+        "/*",
+        "--"
+      ],
+      "answer": "#",
+      "topic": "Comments"
+    },
+
+    {
+      "question": "Which data type stores text?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "answer": "str",
+      "topic": "Data Types"
+    },
+
+    {
+      "question": "Which function is used to display output?",
+      "options": [
+        "show()",
+        "display()",
+        "print()",
+        "output()"
+      ],
+      "answer": "print()",
+      "topic": "Output"
+    },
+
+    {
+      "question": "Which operator is used for addition?",
+      "options": [
+        "+",
+        "-",
+        "*",
+        "/"
+      ],
+      "answer": "+",
+      "topic": "Operators"
+    },
+
+    {
+      "question": "Which keyword is used for conditional statements?",
+      "options": [
+        "if",
+        "loop",
+        "while",
+        "check"
+      ],
+      "answer": "if",
+      "topic": "Conditions"
+    }
+
+  ],
+
+  "DBMS": [
+
+    {
+      "question": "What does DBMS stand for?",
+      "options": [
+        "Database Management System",
+        "Data Backup System",
+        "Digital Base System",
+        "None"
+      ],
+      "answer": "Database Management System",
+      "topic": "Introduction"
+    },
+
+    {
+      "question": "Which language is used in DBMS?",
+      "options": [
+        "SQL",
+        "HTML",
+        "Python",
+        "CSS"
+      ],
+      "answer": "SQL",
+      "topic": "SQL"
+    },
+
+    {
+      "question": "Which command is used to retrieve data?",
+      "options": [
+        "GET",
+        "SELECT",
+        "OPEN",
+        "FETCH"
+      ],
+      "answer": "SELECT",
+      "topic": "Queries"
+    },
+
+    {
+      "question": "Which key uniquely identifies a record?",
+      "options": [
+        "Foreign Key",
+        "Candidate Key",
+        "Primary Key",
+        "Alternate Key"
+      ],
+      "answer": "Primary Key",
+      "topic": "Keys"
+    },
+
+    {
+      "question": "Which normal form removes partial dependency?",
+      "options": [
+        "1NF",
+        "2NF",
+        "3NF",
+        "BCNF"
+      ],
+      "answer": "2NF",
+      "topic": "Normalization"
+    },
+
+    {
+      "question": "Which SQL command is used to delete a table?",
+      "options": [
+        "REMOVE",
+        "DELETE",
+        "DROP",
+        "CLEAR"
+      ],
+      "answer": "DROP",
+      "topic": "SQL"
+    },
+
+    {
+      "question": "What is a collection of related data called?",
+      "options": [
+        "Database",
+        "Table",
+        "Tuple",
+        "Query"
+      ],
+      "answer": "Database",
+      "topic": "Introduction"
+    },
+
+    {
+      "question": "Which command adds new data into a table?",
+      "options": [
+        "INSERT",
+        "ADD",
+        "UPDATE",
+        "CREATE"
+      ],
+      "answer": "INSERT",
+      "topic": "SQL"
+    }
+
+  ]
+}

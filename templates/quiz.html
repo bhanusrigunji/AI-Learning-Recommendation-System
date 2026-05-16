@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Quiz</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        {{ subject }} Quiz
+    </div>
+
+    <div class="container">
+
+        <div class="quiz-box">
+
+            <h2 id="timer">
+                Time Left: 60 Seconds
+            </h2>
+
+            <form method="POST">
+
+                {% for q in questions %}
+
+                    <div class="question-box">
+
+                        <h3>
+                            {{ loop.index }}.
+                            {{ q.question }}
+                        </h3>
+
+                        {% set question_number = loop.index %}
+
+                        {% for option in q.options %}
+
+                            <label class="option-label">
+
+                                <input type="radio"
+                                       name="q{{ question_number }}"
+                                       value="{{ option }}"
+                                       required>
+
+                                {{ option }}
+
+                            </label>
+
+                            <br>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <br>
+
+                {% endfor %}
+
+                <button type="submit">
+                    Submit Quiz
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let timeLeft = 60;
+
+        let timer = document.getElementById("timer");
+
+        let countdown = setInterval(function(){
+
+            timeLeft--;
+
+            timer.innerHTML =
+                "Time Left: " + timeLeft + " Seconds";
+
+            if(timeLeft <= 0){
+
+                clearInterval(countdown);
+
+                alert("Time Up!");
+
+                document.forms[0].submit();
+            }
+
+        },1000);
+
+    </script>
+
+</body>
+
+</html>

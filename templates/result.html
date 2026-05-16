@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        Quiz Performance Analysis
+    </div>
+
+    <div class="container">
+
+        <div class="result-box">
+
+            <h1>{{ subject }} Quiz Result</h1>
+
+            <br>
+
+            <h2>Your Score: {{ score }}/{{ total }}</h2>
+
+            {% set percentage = (score / total) * 100 %}
+
+            <h2>Percentage: {{ percentage }}%</h2>
+
+            <br>
+
+            {% if percentage >= 80 %}
+
+                <h2 style="color: green;">
+                    Excellent Performance 🎉
+                </h2>
+
+            {% elif percentage >= 50 %}
+
+                <h2 style="color: orange;">
+                    Good Performance 👍
+                </h2>
+
+            {% else %}
+
+                <h2 style="color: red;">
+                    Need Improvement 📚
+                </h2>
+
+            {% endif %}
+
+            <br>
+
+            <h2>Weak Topics</h2>
+
+            {% if weak_topics %}
+
+                {% for topic in weak_topics %}
+
+                    <p>{{ topic }}</p>
+
+                {% endfor %}
+
+            {% else %}
+
+                <p>No Weak Topics 🎉</p>
+
+            {% endif %}
+
+            <br>
+
+            <h2>Recommended Videos</h2>
+
+            {% if recommended_videos %}
+
+                {% for video in recommended_videos %}
+
+                    <a href="{{ video }}" target="_blank">
+
+                        <button>
+                            Watch Recommended Video
+                        </button>
+
+                    </a>
+
+                    <br><br>
+
+                {% endfor %}
+
+            {% else %}
+
+                <p>No Recommendations Needed 🎉</p>
+
+            {% endif %}
+
+            <br><br>
+
+            <h2>Performance Chart</h2>
+
+            <canvas id="scoreChart"></canvas>
+
+            <br><br>
+
+            <a href="/subjects">
+
+                <button>
+                    Take Another Quiz
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const correctAnswers = Number("{{ score }}");
+        const wrongAnswers = Number("{{ total - score }}");
+
+        const ctx = document.getElementById('scoreChart');
+
+        new Chart(ctx, {
+
+            type: 'bar',
+
+            data: {
+
+                labels: ['Correct Answers', 'Wrong Answers'],
+
+                datasets: [{
+
+                    label: 'Quiz Performance',
+
+                    data: [correctAnswers, wrongAnswers],
+
+                    backgroundColor: [
+                        'green',
+                        'red'
+                    ],
+
+                    borderWidth: 1
+
+                }]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true
+
+                    }
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
